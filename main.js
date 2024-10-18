@@ -16,7 +16,8 @@ document.getElementById("d6").addEventListener("mouseleave", d6_leave)
 document.getElementById("d8").addEventListener("mouseenter", d8_enter)
 document.getElementById("d8").addEventListener("mouseleave", d8_leave)
 document.getElementById("enter").addEventListener("click", greeting)
-
+document.getElementById("image").addEventListener("click", image_swap)
+document.getElementById("user_input").addEventListener("input", key_log)
 
 /*** Functions ***/
 
@@ -52,6 +53,17 @@ function d8_leave() {
 }
 
 function greeting() {
-    let name = document.getElementById("user.input").value;
-    document.getElementsById("greeting").textcontent = `Hello ${name}`
+    let name = document.getElementById("user_input").value; 
+    document.getElementById("greeting").textContent = `Hello ${name}`;
+    document.getElementById("user_input").value = ""; 
+    document.getElementById("user_input").focus();
+}
+
+function image_swap() {
+    document.getElementById("image").src = "./images/download.webp";
+}
+
+
+function key_log() {
+console.log(document.getElementById("user_input").value)
 }
